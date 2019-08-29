@@ -1,5 +1,5 @@
 #### 020__字串題型__easy
-# Valid Parentheses 合法的括號
+# Valid Parentheses <br/>合法的括號
 
 ### Description
 
@@ -58,17 +58,16 @@ var isValid = function(s) {
 ```
 * * *
 ### Thinking
-1. 去除掉所有文字、空白，和單引號，只留下括號
-2. 如果是奇數回傳false，如果是空字串回傳true
-3. 利用正規表達式跟回圈，重複把已經成對的刪除，最後都被刪掉就是true了
+1. 去除掉所有文字、空白，和單引號，只留下括號。
+2. 如果是奇數回傳false，如果是空字串回傳true。
+3. 利用正規表達式跟回圈，重複把已經成對的刪除，最後都被刪掉就是true了。
 * * *
 ### Submissions
 ```js
 var isValid = function(s) {
-    const reg = /([A-Z])\w+/gi;
-    const reg1 = /(\'+)/gi;
-    let newStr = s.replace(reg,'').replace(reg1,'').replace(' ','');
-    let reg2 = /(\(\))|(\[\])|(\{\})/gi;
+    const reg = /[^\(\)\[\]\{\}]/gi;
+    let newStr = s.replace(reg,'');
+    let reg2 = /(\(\))|(\[\])|(\{\})/g;
   	
     if(newStr.length===0)return true;
     if(newStr.length%2!==0)return false;
@@ -77,9 +76,8 @@ var isValid = function(s) {
       if(reg2.test(newStr)){
      		newStr = newStr.replace(reg2,'');
  		}
-      return newStr==="";
 	}
-	return false;
+  return newStr==="";
 };
 ```
 ###### Runtime: 68 ms

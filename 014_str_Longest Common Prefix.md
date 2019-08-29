@@ -1,5 +1,5 @@
 #### 014__字串題型__easy
-# Longest Common Prefix 尋找字串的共同前綴
+# Longest Common Prefix <br/>尋找字串的共同前綴
 
 ### Description
 Write a function to find the longest common prefix string amongst an array of strings. 
@@ -34,8 +34,8 @@ var longestCommonPrefix = function(strs) {
 ```
 * * *
 ### Thinking
-1. 拿陣列的第一個字，暫時當作共同的前綴字 (字首)，跟陣列之後的每個字比較 (forLoop)
-2. 字首的每個字母進行做比對作業 (forLoop + charAt)，沒有的要去除(slice)
+1. 拿陣列的第一個字，暫時當作共同的前綴字 (字首)，跟陣列之後的每個字比較 (forLoop)。
+2. 字首的每個字母進行做比對作業 (forLoop + charAt)，沒有的要去除(slice)。
 * * *
 ### Submissions
 ```js
@@ -78,7 +78,6 @@ var longestCommonPrefix = function(strs) {
     return prefix;
 };
 ```
-
 * * *
 ### Note
  存取字元有兩個方法，第一個是用 charAt，另一個(在ECMAScript 5中被提到)是將字串當作一個類似陣列的物件，直接存取字串中對應的數值索引。
